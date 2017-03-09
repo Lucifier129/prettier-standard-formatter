@@ -1,7 +1,7 @@
 const prettier = require('prettier')
 const standard = require('standard')
 
-exports.format = source => new Promise((resolve, reject) => {
+exports.format = (source, path) => new Promise((resolve, reject) => {
   const pretty = prettier.format(source, {
     printWidth: 80,
     tabWidth: 2,
@@ -16,7 +16,7 @@ exports.format = source => new Promise((resolve, reject) => {
     }
     const output = result.results[0].output
     if (typeof output !== 'string') {
-      return reject(new Error('Expected a string back from standard'))
+      return reject(new Error(`Expected a string back from standard, ${path}`))
     }
     resolve(output)
   })

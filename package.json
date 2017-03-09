@@ -1,6 +1,6 @@
 {
-  "name": "prettier-standard-formatter",
-  "version": "0.222222222222222.333333333333333",
+  "name": "standard-prettier",
+  "version": "1.0.1",
   "description": "Prettier for JavaScript Standard Style",
   "main": "index.js",
   "bin": "cli.js",

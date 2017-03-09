@@ -26,7 +26,8 @@ function run () {
   const format = path => {
     fs.readFile(path, 'utf-8', (err, sourceCode) => {
       if (err) throw err
-      prettierStandard.format(sourceCode).then(output => {
+      if (!sourceCode) return
+      prettierStandard.format(sourceCode, path).then(output => {
         fs.writeFile(path, output, 'utf-8', err => {
           if (err) throw err
           console.log(path)
